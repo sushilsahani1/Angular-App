@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
+    <title>Angular App</title>
+</head>
+<body ng-app="myApp">
+
+    <div class="master-class">
+        <a href="#/!">Home</a>
+        <a href="#!DragonBall">DragonBall</a>
+        <a href="#!Demosite">Demosite</a>
+        <a href="#!Blocksite">Blocksite</a>
+    </div>
+    <hr>
+        
+    
+    <div ng-view></div>
+    
+    <script>
+    var app = angular.module("myApp", ["ngRoute"]);
+    app.config(function($routeProvider) {
+      $routeProvider
+      .when("/", {
+        templateUrl : "main.htm"
+      })
+      .when("/DragonBall", {
+        templateUrl : "dragonball.htm"
+      })
+      .when("/Demosite", {
+        templateUrl : "demosite.htm"
+      })
+      .when("/Blocksite", {
+        templateUrl : "blocksite.htm"
+      });
+    });
+    </script>
+</body>
+</html>
